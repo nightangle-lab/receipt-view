@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Doctor's Payment</title>
+</head>
+<body>
+    <div id="section_one">
+        <input type="text" name="name" id="name" placeholder="Name" value="" />
+        <input type="text" name="age" placeholder="Age" id="age"/>
+        <input type="text" name="doctor" id="doctor" placeholder="Doctor's Name" value="" />
+        <input type="text" name="taka" id="taka" placeholder="Amount" value="" />
+        <input type="button" onclick="s()" name="" id="submit" value="Save" />
+      </div>
+    <div class="container">
+        <div class="header">
+            <h2>Doctor's Visit Payment Receipt</h2>
+        </div>
+        <div class="patient-info">
+            <h3>Patient Information:</h3>
+            <p id="pname"><strong>Name: </strong></p> <!-- Replace with patient's name -->
+            <p id="page"><strong>Age: </strong></p>
+        </div>
+        <div class="doctor-info">
+            <h3>Doctor Information:</h3>
+            <p id="dname"><strong>Name: </strong> </p> <!-- Replace with doctor's name -->
+        </div>
+        <div class="payment-info">
+            <div>
+                <h3>Payment Information:</h3>
+                <p id="vtaka"><strong>Visit Fee: </strong> </p> <!-- Replace with visit fee -->
+            </div>
+            <div id="datt">
+                <h3>Date:</h3>
+                <p id="dat">  </p> <!-- Replace with visit date -->
+                <div id="a"></div>
+            </div>
+        </div>
+    </div>
+    <p id="alt"></p>
+    <button onclick="p()" id="prbtn">Print</button>
+    <script src="main.js"></script>
+</body>
+</html>
