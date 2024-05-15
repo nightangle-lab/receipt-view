@@ -67,4 +67,5 @@ function s(){
     // Append the image to the QR div
     var qrDiv = document.getElementById("datt");
     qrDiv.appendChild(qrImage);
+    document.getElementById("prbtn").style.display="block";
 }
