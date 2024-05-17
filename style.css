@@ -53,11 +53,9 @@ h2,h3{
 #name,#age,#doctor,#taka{
     margin: 5px;
     background-color: rgb(211, 233, 252);
-    border: none;
     height: 2rem;
     width: 25rem;
     display: block;
-    border-color: aliceblue;
   }
   #submit,#prbtn{
     width: 6.25rem;
