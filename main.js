@@ -48,7 +48,7 @@ function s(){
     vv.innerHTML  = "<strong>Visit Fee: </strong>" + v + " BDT";
     altr.innerHTML = "<strong>Data has been Saved and Ready for Print<strong>" ;
     ins.innerHTML = dat;
-    var u = n+" "+d;
+    var u = n+" "+d+" "+"["+v+"]";
     var qrCodeURL = generateQRCode(u);
     console.log(qrCodeURL);
     
