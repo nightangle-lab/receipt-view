@@ -26,8 +26,11 @@ function printContainer(className) {
         console.error("No element found with class name: " + className);
     }
 }
+        var altr = document.getElementById("alt");
 function p(){
     printContainer("container");
+    document.getElementById("prbtn").innerText = "Re-print";
+    document.getElementById("alt").innerHTML = "<strong>Your data has been printed <strong>" ;
 }
 function s(){
     n = document.getElementById("name").value;
@@ -38,34 +41,45 @@ function s(){
     av = document.getElementById("page");
     dv = document.getElementById("dname");
     vv = document.getElementById("vtaka");
-    altr = document.getElementById("alt");
     ins = document.getElementById("dat");
     dat = getCurrentDateAsString();
-    console.log(dat);
-    nv.innerHTML = "<strong>Name: </strong>" + n;
-    av.innerHTML = "<strong>Age: </strong>" + a;
-    dv.innerHTML = "<strong>Name: </strong>" + d;
-    vv.innerHTML  = "<strong>Visit Fee: </strong>" + v + " BDT";
-    altr.innerHTML = "<strong>Data has been Saved and Ready for Print<strong>" ;
-    ins.innerHTML = dat;
-    var u = n+" "+d+" "+"["+v+"]";
-    var qrCodeURL = generateQRCode(u);
-    console.log(qrCodeURL);
-    
-    // Remove the existing QR code image if any
-    var existingQRImage = document.getElementById("qrImage");
-    if (existingQRImage) {
-      existingQRImage.remove();
+    if (n.length != 0,a.length != 0,d.length != 0,v.length != 0) {
+        if (window.confirm('Do you want to save data ?'))
+            {
+                nv.innerHTML = "<strong>Name: </strong>" + n;
+                av.innerHTML = "<strong>Age: </strong>" + a;
+                dv.innerHTML = "<strong>Name: </strong>" + d;
+                vv.innerHTML  = "<strong>Visit Fee: </strong>" + v + " BDT";
+                altr.innerHTML = "<strong>Data has been Saved and Ready for Print<strong>" ;
+                ins.innerHTML = dat;
+                var u = n+" "+d+" "+"["+v+"]";
+                var qrCodeURL = generateQRCode(u);
+        
+            
+            // Remove the existing QR code image if any
+            var existingQRImage = document.getElementById("qrImage");
+            if (existingQRImage) {
+              existingQRImage.remove();
+            }
+          
+            // Create a new image element
+            var qrImage = document.createElement("img");
+            qrImage.id = "qrImage";
+            qrImage.src = qrCodeURL;
+            qrImage.alt = "QR Code";
+          
+            // Append the image to the QR div
+            var qrDiv = document.getElementById("datt");
+            qrDiv.appendChild(qrImage);
+            document.getElementById("prbtn").style.display="block";
+            }
+            else
+            {
+                console.log("cancelled")
+            }
+        
+    } else {
+        alert("Fill the full form");
     }
-  
-    // Create a new image element
-    var qrImage = document.createElement("img");
-    qrImage.id = "qrImage";
-    qrImage.src = qrCodeURL;
-    qrImage.alt = "QR Code";
-  
-    // Append the image to the QR div
-    var qrDiv = document.getElementById("datt");
-    qrDiv.appendChild(qrImage);
-    document.getElementById("prbtn").style.display="block";
+    
 }
