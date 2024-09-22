@@ -47,7 +47,7 @@ function s(){
         if (window.confirm('Do you want to save data ?'))
             {
                 nv.innerHTML = "<strong>Name: </strong>" + n;
-                av.innerHTML = "<strong>Age: </strong>" + a;
+                av.innerHTML = "<strong>Age: </strong>" + a + " YEARS";
                 dv.innerHTML = "<strong>Name: </strong>" + d;
                 vv.innerHTML  = "<strong>Visit Fee: </strong>" + v + " BDT";
                 altr.innerHTML = "<strong>Data has been Saved and Ready for Print<strong>" ;
